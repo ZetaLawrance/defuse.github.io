@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Defuse Bomb Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="assets/video/hack.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="container">
+        <div class="timer-container">
+            <div id="timer">Time Left: <span id="time">60:00</span></div>
+            <div class="input-group">
+                <input type="number" id="timerInput" placeholder="Set Timer (seconds)" min="1">
+                <button onclick="setTimer()">Start Timer</button>
+            </div>
+        </div>
+        <div class="bomb">
+            <h1>💣 Bomb Defusal 💣</h1>
+            <img src="assets/img/bomb.png" alt="Bomb" class="bomb-image">
+            <div class="input-group">
+                <input type="text" id="codeInput" placeholder="Enter Defusal Code">
+                <button onclick="defuseBomb()">Defuse</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup hidden">
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+    <div id="explosion" class="explosion hidden">
+        <p>💥 BOOM! 💥</p>
+    </div>
+
+    <!-- Audio files for sound effects -->
+    <audio id="bombDefuseSound" src="assets/sound/bomb-defuse.mp3"></audio>
+    <audio id="accessDeniedSound" src="assets/sound/access-denied.mp3"></audio>
+    <audio id="explosionSound" src="assets/sound/weird-sound.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
